@@ -1,23 +1,18 @@
+import DataFormat from '../utils/DataFormat';
+import { Header } from '../view/Header';
+
 @Entry
 @Component
 struct Index {
   @State message: string = 'Hello World';
 
   build() {
-    RelativeContainer() {
+    Column(){
       Text(this.message)
-        .id('HelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
-        .grayscale(1)
-        .opacity(0.58)
-        .borderRadius('1vp')
+      Header()
+      Button("获取日期").onClick(()=>{
+        this.message += DataFormat.dateFormat(new Date())
+      })
     }
-    .height('100%')
-    .width('100%')
   }
 }
