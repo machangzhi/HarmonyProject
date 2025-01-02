@@ -9,9 +9,11 @@ struct Index {
   build() {
     Column(){
       Text(this.message)
-      Header()
+      // Header()
       Button("获取日期").onClick(()=>{
-        this.message += DataFormat.dateFormat(new Date())
+        for (let index = 0; index < 5; index++) {
+          setTimeout(()=>{this.message = index + ''},index*1000)
+        }
       })
     }
   }
