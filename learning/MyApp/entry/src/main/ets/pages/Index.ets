@@ -7,7 +7,7 @@ struct Index {
   @State message: string = 'Hello World';
 
   build() {
-    Column(){
+    Column({space: 40}){
       Text(this.message)
       // Header()
       Button("获取日期").onClick(()=>{
@@ -15,6 +15,12 @@ struct Index {
           setTimeout(()=>{this.message = index + ''},index*1000)
         }
       })
+      Row(){
+        Column({space: 10}){
+          Text('456')
+          Button('button')
+        }
+      }
     }
   }
 }
