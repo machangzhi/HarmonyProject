@@ -4,17 +4,9 @@ struct DetailPage {
   @State message: string = 'Hello World';
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('DetailPageHelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+    Column(){
+      Text($r('app.string.title'))
+      TextInput({placeholder:$r('app.string.input_placeholder')})
     }
-    .height('100%')
-    .width('100%')
   }
 }
